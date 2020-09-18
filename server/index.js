@@ -16,7 +16,7 @@ app.use(router);
 app.use(cors());
 
 io.on('connect', socket => {
-  console.log('connection made!!');
+  console.log('connection made!');
 
   socket.on('join', ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
@@ -52,3 +52,4 @@ io.on('connect', socket => {
 });
 
 server.listen(PORT, () =>console.log(`Server running on port: ${PORT}`));
+
